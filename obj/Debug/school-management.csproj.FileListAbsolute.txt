@@ -1,0 +1,74 @@
+c:\users\aa\documents\visual studio 2015\Projects\school-management\school-management\bin\roslyn\csc.exe
+c:\users\aa\documents\visual studio 2015\Projects\school-management\school-management\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+c:\users\aa\documents\visual studio 2015\Projects\school-management\school-management\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+c:\users\aa\documents\visual studio 2015\Projects\school-management\school-management\bin\roslyn\Microsoft.CodeAnalysis.dll
+c:\users\aa\documents\visual studio 2015\Projects\school-management\school-management\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+c:\users\aa\documents\visual studio 2015\Projects\school-management\school-management\bin\roslyn\Microsoft.CSharp.Core.targets
+c:\users\aa\documents\visual studio 2015\Projects\school-management\school-management\bin\roslyn\Microsoft.VisualBasic.Core.targets
+c:\users\aa\documents\visual studio 2015\Projects\school-management\school-management\bin\roslyn\System.Collections.Immutable.dll
+c:\users\aa\documents\visual studio 2015\Projects\school-management\school-management\bin\roslyn\System.Reflection.Metadata.dll
+c:\users\aa\documents\visual studio 2015\Projects\school-management\school-management\bin\roslyn\vbc.exe
+c:\users\aa\documents\visual studio 2015\Projects\school-management\school-management\bin\roslyn\VBCSCompiler.exe
+c:\users\aa\documents\visual studio 2015\Projects\school-management\school-management\bin\roslyn\VBCSCompiler.exe.config
+c:\users\aa\documents\visual studio 2015\Projects\school-management\school-management\bin\school-management.dll.config
+c:\users\aa\documents\visual studio 2015\Projects\school-management\school-management\bin\school-management.dll
+c:\users\aa\documents\visual studio 2015\Projects\school-management\school-management\bin\school-management.pdb
+c:\users\aa\documents\visual studio 2015\Projects\school-management\school-management\bin\EntityFramework.dll
+c:\users\aa\documents\visual studio 2015\Projects\school-management\school-management\bin\EntityFramework.SqlServer.dll
+c:\users\aa\documents\visual studio 2015\Projects\school-management\school-management\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+c:\users\aa\documents\visual studio 2015\Projects\school-management\school-management\bin\EntityFramework.xml
+c:\users\aa\documents\visual studio 2015\Projects\school-management\school-management\bin\EntityFramework.SqlServer.xml
+c:\users\aa\documents\visual studio 2015\Projects\school-management\school-management\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+c:\users\aa\documents\visual studio 2015\Projects\school-management\school-management\obj\Debug\school-management.csprojResolveAssemblyReference.cache
+c:\users\aa\documents\visual studio 2015\Projects\school-management\school-management\obj\Debug\school-management.dll
+c:\users\aa\documents\visual studio 2015\Projects\school-management\school-management\obj\Debug\school-management.pdb
+M:\study\5 sem\scool management\school-management\school-management\bin\roslyn\csc.exe
+M:\study\5 sem\scool management\school-management\school-management\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+M:\study\5 sem\scool management\school-management\school-management\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+M:\study\5 sem\scool management\school-management\school-management\bin\roslyn\Microsoft.CodeAnalysis.dll
+M:\study\5 sem\scool management\school-management\school-management\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+M:\study\5 sem\scool management\school-management\school-management\bin\roslyn\Microsoft.CSharp.Core.targets
+M:\study\5 sem\scool management\school-management\school-management\bin\roslyn\Microsoft.VisualBasic.Core.targets
+M:\study\5 sem\scool management\school-management\school-management\bin\roslyn\System.Collections.Immutable.dll
+M:\study\5 sem\scool management\school-management\school-management\bin\roslyn\System.Reflection.Metadata.dll
+M:\study\5 sem\scool management\school-management\school-management\bin\roslyn\vbc.exe
+M:\study\5 sem\scool management\school-management\school-management\bin\roslyn\VBCSCompiler.exe
+M:\study\5 sem\scool management\school-management\school-management\bin\roslyn\VBCSCompiler.exe.config
+M:\study\5 sem\scool management\school-management\school-management\bin\school-management.dll.config
+M:\study\5 sem\scool management\school-management\school-management\bin\school-management.dll
+M:\study\5 sem\scool management\school-management\school-management\bin\school-management.pdb
+M:\study\5 sem\scool management\school-management\school-management\bin\EntityFramework.dll
+M:\study\5 sem\scool management\school-management\school-management\bin\EntityFramework.SqlServer.dll
+M:\study\5 sem\scool management\school-management\school-management\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+M:\study\5 sem\scool management\school-management\school-management\bin\EntityFramework.xml
+M:\study\5 sem\scool management\school-management\school-management\bin\EntityFramework.SqlServer.xml
+M:\study\5 sem\scool management\school-management\school-management\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+M:\study\5 sem\scool management\school-management\school-management\obj\Debug\school-management.csprojResolveAssemblyReference.cache
+M:\study\5 sem\scool management\school-management\school-management\obj\Debug\school-management.dll
+M:\study\5 sem\scool management\school-management\school-management\obj\Debug\school-management.pdb
+C:\Users\aa\Documents\Visual Studio 2015\Projects\scool management\school-management\school-management\bin\roslyn\csc.exe
+C:\Users\aa\Documents\Visual Studio 2015\Projects\scool management\school-management\school-management\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\aa\Documents\Visual Studio 2015\Projects\scool management\school-management\school-management\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\aa\Documents\Visual Studio 2015\Projects\scool management\school-management\school-management\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\aa\Documents\Visual Studio 2015\Projects\scool management\school-management\school-management\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\aa\Documents\Visual Studio 2015\Projects\scool management\school-management\school-management\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\aa\Documents\Visual Studio 2015\Projects\scool management\school-management\school-management\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\aa\Documents\Visual Studio 2015\Projects\scool management\school-management\school-management\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\aa\Documents\Visual Studio 2015\Projects\scool management\school-management\school-management\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\aa\Documents\Visual Studio 2015\Projects\scool management\school-management\school-management\bin\roslyn\vbc.exe
+C:\Users\aa\Documents\Visual Studio 2015\Projects\scool management\school-management\school-management\bin\roslyn\VBCSCompiler.exe
+C:\Users\aa\Documents\Visual Studio 2015\Projects\scool management\school-management\school-management\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\aa\Documents\Visual Studio 2015\Projects\scool management\school-management\school-management\bin\school-management.dll.config
+C:\Users\aa\Documents\Visual Studio 2015\Projects\scool management\school-management\school-management\bin\school-management.dll
+C:\Users\aa\Documents\Visual Studio 2015\Projects\scool management\school-management\school-management\bin\school-management.pdb
+C:\Users\aa\Documents\Visual Studio 2015\Projects\scool management\school-management\school-management\bin\EntityFramework.dll
+C:\Users\aa\Documents\Visual Studio 2015\Projects\scool management\school-management\school-management\bin\EntityFramework.SqlServer.dll
+C:\Users\aa\Documents\Visual Studio 2015\Projects\scool management\school-management\school-management\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\aa\Documents\Visual Studio 2015\Projects\scool management\school-management\school-management\bin\EntityFramework.xml
+C:\Users\aa\Documents\Visual Studio 2015\Projects\scool management\school-management\school-management\bin\EntityFramework.SqlServer.xml
+C:\Users\aa\Documents\Visual Studio 2015\Projects\scool management\school-management\school-management\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\aa\Documents\Visual Studio 2015\Projects\scool management\school-management\school-management\obj\Debug\school-management.csprojResolveAssemblyReference.cache
+C:\Users\aa\Documents\Visual Studio 2015\Projects\scool management\school-management\school-management\obj\Debug\school-management.dll
+C:\Users\aa\Documents\Visual Studio 2015\Projects\scool management\school-management\school-management\obj\Debug\school-management.pdb
+C:\Users\aa\Documents\Visual Studio 2015\Projects\scool management\school-management\school-management\bin\itextsharp.dll
+C:\Users\aa\Documents\Visual Studio 2015\Projects\scool management\school-management\school-management\bin\itextsharp.xml

@@ -1,0 +1,473 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="schooldbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="admin">
+    <Key>
+      <PropertyRef Name="admin_id" />
+    </Key>
+    <Property Name="admin_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="emp_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="emp_pwd" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="login" Relationship="Self.admin1foreign" FromRole="admin" ToRole="login" />
+  </EntityType>
+  <EntityType Name="attelo">
+    <Key>
+      <PropertyRef Name="totalno" />
+    </Key>
+    <Property Name="totalno" Type="Int32" Nullable="false" />
+    <Property Name="tot" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="employee">
+    <Key>
+      <PropertyRef Name="emp_id" />
+    </Key>
+    <Property Name="emp_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="school_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="emp_name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="emp_deg" Type="String" MaxLength="18" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="emp_exp" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="emp_salary" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="emp_address" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="emp_age" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="emp_sta" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="fac_attendence" Relationship="Self.emp2foreign" FromRole="employee" ToRole="fac_attendence" />
+    <NavigationProperty Name="login" Relationship="Self.empforeign" FromRole="employee" ToRole="login" />
+    <NavigationProperty Name="salary" Relationship="Self.fac3foreign" FromRole="employee" ToRole="salary" />
+    <NavigationProperty Name="school" Relationship="Self.schoolforeign" FromRole="employee" ToRole="school" />
+  </EntityType>
+  <EntityType Name="fac_attendence">
+    <Key>
+      <PropertyRef Name="date" />
+    </Key>
+    <Property Name="emp_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="is_present" Type="Int32" />
+    <NavigationProperty Name="employee" Relationship="Self.emp2foreign" FromRole="fac_attendence" ToRole="employee" />
+  </EntityType>
+  <EntityType Name="fee">
+    <Key>
+      <PropertyRef Name="stu_id" />
+    </Key>
+    <Property Name="stu_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="class_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="amount" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="is_paid" Type="Int32" />
+    <NavigationProperty Name="myclass" Relationship="Self.class3foreign" FromRole="fee" ToRole="myclass" />
+    <NavigationProperty Name="student" Relationship="Self.stu3foreign" FromRole="fee" ToRole="student" />
+  </EntityType>
+  <EntityType Name="login">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="pwd" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="role" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="sta" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="admin" Relationship="Self.admin1foreign" FromRole="login" ToRole="admin" />
+    <NavigationProperty Name="employee" Relationship="Self.empforeign" FromRole="login" ToRole="employee" />
+    <NavigationProperty Name="student" Relationship="Self.stuforeign" FromRole="login" ToRole="student" />
+  </EntityType>
+  <EntityType Name="mark">
+    <Key>
+      <PropertyRef Name="stu_id" />
+    </Key>
+    <Property Name="stu_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="class_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="out_of" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="sub1" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="sub2" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="sub3" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="sub4" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="sub5" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="res" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="myclass" Relationship="Self.class5foreign" FromRole="mark" ToRole="myclass" />
+    <NavigationProperty Name="student" Relationship="Self.stu4foreign" FromRole="mark" ToRole="student" />
+  </EntityType>
+  <EntityType Name="myclass">
+    <Key>
+      <PropertyRef Name="class_id" />
+    </Key>
+    <Property Name="class_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="school_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="total_stu" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <NavigationProperty Name="fees" Relationship="Self.class3foreign" FromRole="myclass" ToRole="fee" />
+    <NavigationProperty Name="marks" Relationship="Self.class5foreign" FromRole="myclass" ToRole="mark" />
+    <NavigationProperty Name="students" Relationship="Self.class4foreign" FromRole="myclass" ToRole="student" />
+    <NavigationProperty Name="time_table" Relationship="Self.classforeign" FromRole="myclass" ToRole="time_table" />
+    <NavigationProperty Name="school" Relationship="Self.school7foreign" FromRole="myclass" ToRole="school" />
+  </EntityType>
+  <EntityType Name="period">
+    <Key>
+      <PropertyRef Name="period_id" />
+    </Key>
+    <Property Name="period_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="start_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="end_time" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="time_table" Relationship="Self.periodforeign" FromRole="period" ToRole="time_table" />
+  </EntityType>
+  <EntityType Name="ragistration">
+    <Key>
+      <PropertyRef Name="name" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="con" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="addre" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="emailadd" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="cla" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="dob" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="blood_gr" Type="String" MaxLength="5" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="salary">
+    <Key>
+      <PropertyRef Name="emp_id" />
+    </Key>
+    <Property Name="emp_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="amount" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="is_paid" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="employee" Relationship="Self.fac3foreign" FromRole="salary" ToRole="employee" />
+  </EntityType>
+  <EntityType Name="school">
+    <Key>
+      <PropertyRef Name="school_id" />
+    </Key>
+    <Property Name="school_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="school_name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="address" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="employees" Relationship="Self.schoolforeign" FromRole="school" ToRole="employee" />
+    <NavigationProperty Name="myclasses" Relationship="Self.school7foreign" FromRole="school" ToRole="myclass" />
+  </EntityType>
+  <EntityType Name="status">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="total_stu" Type="Int32" Nullable="false" />
+    <Property Name="total_emp" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="stu_attendance">
+    <Key>
+      <PropertyRef Name="pk" />
+    </Key>
+    <Property Name="stu_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="is_present" Type="Int32" />
+    <Property Name="pk" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="student" Relationship="Self.stu1foreign" FromRole="stu_attendance" ToRole="student" />
+  </EntityType>
+  <EntityType Name="student">
+    <Key>
+      <PropertyRef Name="stu_id" />
+    </Key>
+    <Property Name="stu_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="school_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="stu_name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="stu_class" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="stu_address" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="stu_dob" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="stu_beh" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="stu_con" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="stu_blo_gr" Type="String" MaxLength="5" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="stu_sta" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="fee" Relationship="Self.stu3foreign" FromRole="student" ToRole="fee" />
+    <NavigationProperty Name="login" Relationship="Self.stuforeign" FromRole="student" ToRole="login" />
+    <NavigationProperty Name="mark" Relationship="Self.stu4foreign" FromRole="student" ToRole="mark" />
+    <NavigationProperty Name="myclass" Relationship="Self.class4foreign" FromRole="student" ToRole="myclass" />
+    <NavigationProperty Name="stu_attendance" Relationship="Self.stu1foreign" FromRole="student" ToRole="stu_attendance" />
+  </EntityType>
+  <EntityType Name="subject">
+    <Key>
+      <PropertyRef Name="sub_id" />
+    </Key>
+    <Property Name="sub_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="school_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="sub_name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="time_table" Relationship="Self.sub1foreign" FromRole="subject" ToRole="time_table" />
+  </EntityType>
+  <EntityType Name="time_table">
+    <Key>
+      <PropertyRef Name="sub_id" />
+      <PropertyRef Name="class_id" />
+      <PropertyRef Name="period_id" />
+    </Key>
+    <Property Name="sub_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="class_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="period_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="myclass" Relationship="Self.classforeign" FromRole="time_table" ToRole="myclass" />
+    <NavigationProperty Name="period" Relationship="Self.periodforeign" FromRole="time_table" ToRole="period" />
+    <NavigationProperty Name="subject" Relationship="Self.sub1foreign" FromRole="time_table" ToRole="subject" />
+  </EntityType>
+  <Association Name="admin1foreign">
+    <End Role="login" Type="Self.login" Multiplicity="1" />
+    <End Role="admin" Type="Self.admin" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="login">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="admin">
+        <PropertyRef Name="admin_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="emp2foreign">
+    <End Role="employee" Type="Self.employee" Multiplicity="1" />
+    <End Role="fac_attendence" Type="Self.fac_attendence" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="employee">
+        <PropertyRef Name="emp_id" />
+      </Principal>
+      <Dependent Role="fac_attendence">
+        <PropertyRef Name="emp_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="empforeign">
+    <End Role="login" Type="Self.login" Multiplicity="1" />
+    <End Role="employee" Type="Self.employee" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="login">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="employee">
+        <PropertyRef Name="emp_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fac3foreign">
+    <End Role="employee" Type="Self.employee" Multiplicity="1" />
+    <End Role="salary" Type="Self.salary" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="employee">
+        <PropertyRef Name="emp_id" />
+      </Principal>
+      <Dependent Role="salary">
+        <PropertyRef Name="emp_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="schoolforeign">
+    <End Role="school" Type="Self.school" Multiplicity="1" />
+    <End Role="employee" Type="Self.employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="school">
+        <PropertyRef Name="school_id" />
+      </Principal>
+      <Dependent Role="employee">
+        <PropertyRef Name="school_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="class3foreign">
+    <End Role="myclass" Type="Self.myclass" Multiplicity="1" />
+    <End Role="fee" Type="Self.fee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="myclass">
+        <PropertyRef Name="class_id" />
+      </Principal>
+      <Dependent Role="fee">
+        <PropertyRef Name="class_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="stu3foreign">
+    <End Role="student" Type="Self.student" Multiplicity="1" />
+    <End Role="fee" Type="Self.fee" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="student">
+        <PropertyRef Name="stu_id" />
+      </Principal>
+      <Dependent Role="fee">
+        <PropertyRef Name="stu_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="stuforeign">
+    <End Role="login" Type="Self.login" Multiplicity="1" />
+    <End Role="student" Type="Self.student" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="login">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="student">
+        <PropertyRef Name="stu_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="class5foreign">
+    <End Role="myclass" Type="Self.myclass" Multiplicity="1" />
+    <End Role="mark" Type="Self.mark" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="myclass">
+        <PropertyRef Name="class_id" />
+      </Principal>
+      <Dependent Role="mark">
+        <PropertyRef Name="class_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="stu4foreign">
+    <End Role="student" Type="Self.student" Multiplicity="1" />
+    <End Role="mark" Type="Self.mark" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="student">
+        <PropertyRef Name="stu_id" />
+      </Principal>
+      <Dependent Role="mark">
+        <PropertyRef Name="stu_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="class4foreign">
+    <End Role="myclass" Type="Self.myclass" Multiplicity="1" />
+    <End Role="student" Type="Self.student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="myclass">
+        <PropertyRef Name="class_id" />
+      </Principal>
+      <Dependent Role="student">
+        <PropertyRef Name="stu_class" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="classforeign">
+    <End Role="myclass" Type="Self.myclass" Multiplicity="1" />
+    <End Role="time_table" Type="Self.time_table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="myclass">
+        <PropertyRef Name="class_id" />
+      </Principal>
+      <Dependent Role="time_table">
+        <PropertyRef Name="class_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="school7foreign">
+    <End Role="school" Type="Self.school" Multiplicity="1" />
+    <End Role="myclass" Type="Self.myclass" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="school">
+        <PropertyRef Name="school_id" />
+      </Principal>
+      <Dependent Role="myclass">
+        <PropertyRef Name="school_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="periodforeign">
+    <End Role="period" Type="Self.period" Multiplicity="1" />
+    <End Role="time_table" Type="Self.time_table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="period">
+        <PropertyRef Name="period_id" />
+      </Principal>
+      <Dependent Role="time_table">
+        <PropertyRef Name="period_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="stu1foreign">
+    <End Role="student" Type="Self.student" Multiplicity="1" />
+    <End Role="stu_attendance" Type="Self.stu_attendance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="student">
+        <PropertyRef Name="stu_id" />
+      </Principal>
+      <Dependent Role="stu_attendance">
+        <PropertyRef Name="stu_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="sub1foreign">
+    <End Role="subject" Type="Self.subject" Multiplicity="1" />
+    <End Role="time_table" Type="Self.time_table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="subject">
+        <PropertyRef Name="sub_id" />
+      </Principal>
+      <Dependent Role="time_table">
+        <PropertyRef Name="sub_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="schooldbEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="admins" EntityType="Self.admin" />
+    <EntitySet Name="atteloes" EntityType="Self.attelo" />
+    <EntitySet Name="employees" EntityType="Self.employee" />
+    <EntitySet Name="fac_attendence" EntityType="Self.fac_attendence" />
+    <EntitySet Name="fees" EntityType="Self.fee" />
+    <EntitySet Name="logins" EntityType="Self.login" />
+    <EntitySet Name="marks" EntityType="Self.mark" />
+    <EntitySet Name="myclasses" EntityType="Self.myclass" />
+    <EntitySet Name="periods" EntityType="Self.period" />
+    <EntitySet Name="ragistrations" EntityType="Self.ragistration" />
+    <EntitySet Name="salaries" EntityType="Self.salary" />
+    <EntitySet Name="schools" EntityType="Self.school" />
+    <EntitySet Name="status" EntityType="Self.status" />
+    <EntitySet Name="stu_attendance" EntityType="Self.stu_attendance" />
+    <EntitySet Name="students" EntityType="Self.student" />
+    <EntitySet Name="subjects" EntityType="Self.subject" />
+    <EntitySet Name="time_table" EntityType="Self.time_table" />
+    <AssociationSet Name="admin1foreign" Association="Self.admin1foreign">
+      <End Role="login" EntitySet="logins" />
+      <End Role="admin" EntitySet="admins" />
+    </AssociationSet>
+    <AssociationSet Name="emp2foreign" Association="Self.emp2foreign">
+      <End Role="employee" EntitySet="employees" />
+      <End Role="fac_attendence" EntitySet="fac_attendence" />
+    </AssociationSet>
+    <AssociationSet Name="empforeign" Association="Self.empforeign">
+      <End Role="login" EntitySet="logins" />
+      <End Role="employee" EntitySet="employees" />
+    </AssociationSet>
+    <AssociationSet Name="fac3foreign" Association="Self.fac3foreign">
+      <End Role="employee" EntitySet="employees" />
+      <End Role="salary" EntitySet="salaries" />
+    </AssociationSet>
+    <AssociationSet Name="schoolforeign" Association="Self.schoolforeign">
+      <End Role="school" EntitySet="schools" />
+      <End Role="employee" EntitySet="employees" />
+    </AssociationSet>
+    <AssociationSet Name="class3foreign" Association="Self.class3foreign">
+      <End Role="myclass" EntitySet="myclasses" />
+      <End Role="fee" EntitySet="fees" />
+    </AssociationSet>
+    <AssociationSet Name="stu3foreign" Association="Self.stu3foreign">
+      <End Role="student" EntitySet="students" />
+      <End Role="fee" EntitySet="fees" />
+    </AssociationSet>
+    <AssociationSet Name="stuforeign" Association="Self.stuforeign">
+      <End Role="login" EntitySet="logins" />
+      <End Role="student" EntitySet="students" />
+    </AssociationSet>
+    <AssociationSet Name="class5foreign" Association="Self.class5foreign">
+      <End Role="myclass" EntitySet="myclasses" />
+      <End Role="mark" EntitySet="marks" />
+    </AssociationSet>
+    <AssociationSet Name="stu4foreign" Association="Self.stu4foreign">
+      <End Role="student" EntitySet="students" />
+      <End Role="mark" EntitySet="marks" />
+    </AssociationSet>
+    <AssociationSet Name="class4foreign" Association="Self.class4foreign">
+      <End Role="myclass" EntitySet="myclasses" />
+      <End Role="student" EntitySet="students" />
+    </AssociationSet>
+    <AssociationSet Name="classforeign" Association="Self.classforeign">
+      <End Role="myclass" EntitySet="myclasses" />
+      <End Role="time_table" EntitySet="time_table" />
+    </AssociationSet>
+    <AssociationSet Name="school7foreign" Association="Self.school7foreign">
+      <End Role="school" EntitySet="schools" />
+      <End Role="myclass" EntitySet="myclasses" />
+    </AssociationSet>
+    <AssociationSet Name="periodforeign" Association="Self.periodforeign">
+      <End Role="period" EntitySet="periods" />
+      <End Role="time_table" EntitySet="time_table" />
+    </AssociationSet>
+    <AssociationSet Name="stu1foreign" Association="Self.stu1foreign">
+      <End Role="student" EntitySet="students" />
+      <End Role="stu_attendance" EntitySet="stu_attendance" />
+    </AssociationSet>
+    <AssociationSet Name="sub1foreign" Association="Self.sub1foreign">
+      <End Role="subject" EntitySet="subjects" />
+      <End Role="time_table" EntitySet="time_table" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

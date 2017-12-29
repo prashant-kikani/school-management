@@ -1,0 +1,453 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="schooldbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="admin">
+    <Key>
+      <PropertyRef Name="admin_id" />
+    </Key>
+    <Property Name="admin_id" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="emp_id" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="emp_pwd" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="class">
+    <Key>
+      <PropertyRef Name="class_id" />
+    </Key>
+    <Property Name="class_id" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="sub_id" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="school_id" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="total_stu" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="employee">
+    <Key>
+      <PropertyRef Name="emp_id" />
+    </Key>
+    <Property Name="emp_id" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="school_id" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="emp_name" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="emp_salary" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="emp_address" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'C:\USERS\AA\DOCUMENTS\VISUAL STUDIO 2015\PROJECTS\SCHOOL-MANAGEMENT\SCHOOL-MANAGEMENT\APP_DATA\SCHOOLDB.MDF.dbo.fac_attendence' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="fac_attendence">
+    <Key>
+      <PropertyRef Name="emp_id" />
+      <PropertyRef Name="date" />
+      <PropertyRef Name="is_present" />
+    </Key>
+    <Property Name="emp_id" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="date" Type="datetime" Nullable="false" />
+    <Property Name="is_present" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'C:\USERS\AA\DOCUMENTS\VISUAL STUDIO 2015\PROJECTS\SCHOOL-MANAGEMENT\SCHOOL-MANAGEMENT\APP_DATA\SCHOOLDB.MDF.dbo.fee' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="fee">
+    <Key>
+      <PropertyRef Name="stu_id" />
+      <PropertyRef Name="class_id" />
+      <PropertyRef Name="amount" />
+      <PropertyRef Name="is_paid" />
+    </Key>
+    <Property Name="stu_id" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="class_id" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="amount" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="is_paid" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="login">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="pwd" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="role" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'C:\USERS\AA\DOCUMENTS\VISUAL STUDIO 2015\PROJECTS\SCHOOL-MANAGEMENT\SCHOOL-MANAGEMENT\APP_DATA\SCHOOLDB.MDF.dbo.marks' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="marks">
+    <Key>
+      <PropertyRef Name="stu_id" />
+      <PropertyRef Name="class_id" />
+      <PropertyRef Name="out_of" />
+      <PropertyRef Name="sub1" />
+      <PropertyRef Name="sub2" />
+      <PropertyRef Name="sub3" />
+      <PropertyRef Name="sub4" />
+      <PropertyRef Name="sub5" />
+      <PropertyRef Name="res" />
+    </Key>
+    <Property Name="stu_id" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="class_id" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="out_of" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="sub1" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="sub2" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="sub3" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="sub4" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="sub5" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="res" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="period">
+    <Key>
+      <PropertyRef Name="period_id" />
+    </Key>
+    <Property Name="period_id" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="start_time" Type="datetime" Nullable="false" />
+    <Property Name="end_time" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'C:\USERS\AA\DOCUMENTS\VISUAL STUDIO 2015\PROJECTS\SCHOOL-MANAGEMENT\SCHOOL-MANAGEMENT\APP_DATA\SCHOOLDB.MDF.dbo.salary' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="salary">
+    <Key>
+      <PropertyRef Name="emp_id" />
+      <PropertyRef Name="amount" />
+      <PropertyRef Name="is_paid" />
+    </Key>
+    <Property Name="emp_id" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="amount" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="is_paid" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="school">
+    <Key>
+      <PropertyRef Name="school_id" />
+    </Key>
+    <Property Name="school_id" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="school_name" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="address" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="stu_attendance">
+    <Key>
+      <PropertyRef Name="stu_id" />
+    </Key>
+    <Property Name="stu_id" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="date" Type="datetime" Nullable="false" />
+    <Property Name="is_present" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="student">
+    <Key>
+      <PropertyRef Name="stu_id" />
+    </Key>
+    <Property Name="stu_id" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="school_id" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="stu_name" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="stu_class" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="stu_address" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="subject">
+    <Key>
+      <PropertyRef Name="sub_id" />
+    </Key>
+    <Property Name="sub_id" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="school_id" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="sub_name" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="time_table">
+    <Key>
+      <PropertyRef Name="sub_id" />
+    </Key>
+    <Property Name="sub_id" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="class_id" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="period_id" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <Association Name="admin1foreign">
+    <End Role="login" Type="Self.login" Multiplicity="1" />
+    <End Role="admin" Type="Self.admin" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="login">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="admin">
+        <PropertyRef Name="admin_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="class2foreign">
+    <End Role="class" Type="Self.class" Multiplicity="1" />
+    <End Role="marks" Type="Self.marks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="class">
+        <PropertyRef Name="class_id" />
+      </Principal>
+      <Dependent Role="marks">
+        <PropertyRef Name="class_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="class3foreign">
+    <End Role="class" Type="Self.class" Multiplicity="1" />
+    <End Role="fee" Type="Self.fee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="class">
+        <PropertyRef Name="class_id" />
+      </Principal>
+      <Dependent Role="fee">
+        <PropertyRef Name="class_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="classforeign">
+    <End Role="class" Type="Self.class" Multiplicity="1" />
+    <End Role="time_table" Type="Self.time_table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="class">
+        <PropertyRef Name="class_id" />
+      </Principal>
+      <Dependent Role="time_table">
+        <PropertyRef Name="class_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="emp2foreign">
+    <End Role="employee" Type="Self.employee" Multiplicity="1" />
+    <End Role="fac_attendence" Type="Self.fac_attendence" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="employee">
+        <PropertyRef Name="emp_id" />
+      </Principal>
+      <Dependent Role="fac_attendence">
+        <PropertyRef Name="emp_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="empforeign">
+    <End Role="login" Type="Self.login" Multiplicity="1" />
+    <End Role="employee" Type="Self.employee" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="login">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="employee">
+        <PropertyRef Name="emp_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fac3foreign">
+    <End Role="employee" Type="Self.employee" Multiplicity="1" />
+    <End Role="salary" Type="Self.salary" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="employee">
+        <PropertyRef Name="emp_id" />
+      </Principal>
+      <Dependent Role="salary">
+        <PropertyRef Name="emp_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="periodforeign">
+    <End Role="period" Type="Self.period" Multiplicity="1" />
+    <End Role="time_table" Type="Self.time_table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="period">
+        <PropertyRef Name="period_id" />
+      </Principal>
+      <Dependent Role="time_table">
+        <PropertyRef Name="period_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="school1foreign">
+    <End Role="school" Type="Self.school" Multiplicity="1" />
+    <End Role="class" Type="Self.class" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="school">
+        <PropertyRef Name="school_id" />
+      </Principal>
+      <Dependent Role="class">
+        <PropertyRef Name="school_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="schoolforeign">
+    <End Role="school" Type="Self.school" Multiplicity="1" />
+    <End Role="employee" Type="Self.employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="school">
+        <PropertyRef Name="school_id" />
+      </Principal>
+      <Dependent Role="employee">
+        <PropertyRef Name="school_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="stu1foreign">
+    <End Role="student" Type="Self.student" Multiplicity="1" />
+    <End Role="stu_attendance" Type="Self.stu_attendance" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="student">
+        <PropertyRef Name="stu_id" />
+      </Principal>
+      <Dependent Role="stu_attendance">
+        <PropertyRef Name="stu_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="stu2foreign">
+    <End Role="student" Type="Self.student" Multiplicity="1" />
+    <End Role="marks" Type="Self.marks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="student">
+        <PropertyRef Name="stu_id" />
+      </Principal>
+      <Dependent Role="marks">
+        <PropertyRef Name="stu_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="stu3foreign">
+    <End Role="student" Type="Self.student" Multiplicity="1" />
+    <End Role="fee" Type="Self.fee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="student">
+        <PropertyRef Name="stu_id" />
+      </Principal>
+      <Dependent Role="fee">
+        <PropertyRef Name="stu_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="stuforeign">
+    <End Role="login" Type="Self.login" Multiplicity="1" />
+    <End Role="student" Type="Self.student" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="login">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="student">
+        <PropertyRef Name="stu_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="sub1foreign">
+    <End Role="subject" Type="Self.subject" Multiplicity="1" />
+    <End Role="time_table" Type="Self.time_table" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="subject">
+        <PropertyRef Name="sub_id" />
+      </Principal>
+      <Dependent Role="time_table">
+        <PropertyRef Name="sub_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="subforeign">
+    <End Role="subject" Type="Self.subject" Multiplicity="1" />
+    <End Role="class" Type="Self.class" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="subject">
+        <PropertyRef Name="sub_id" />
+      </Principal>
+      <Dependent Role="class">
+        <PropertyRef Name="sub_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="schooldbModelStoreContainer">
+    <EntitySet Name="admin" EntityType="Self.admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="class" EntityType="Self.class" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="employee" EntityType="Self.employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="login" EntityType="Self.login" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="period" EntityType="Self.period" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="school" EntityType="Self.school" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="stu_attendance" EntityType="Self.stu_attendance" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="student" EntityType="Self.student" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="subject" EntityType="Self.subject" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="time_table" EntityType="Self.time_table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="fac_attendence" EntityType="Self.fac_attendence" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [fac_attendence].[emp_id] AS [emp_id], 
+    [fac_attendence].[date] AS [date], 
+    [fac_attendence].[is_present] AS [is_present]
+    FROM [dbo].[fac_attendence] AS [fac_attendence]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="fee" EntityType="Self.fee" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [fee].[stu_id] AS [stu_id], 
+    [fee].[class_id] AS [class_id], 
+    [fee].[amount] AS [amount], 
+    [fee].[is_paid] AS [is_paid]
+    FROM [dbo].[fee] AS [fee]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="marks" EntityType="Self.marks" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [marks].[stu_id] AS [stu_id], 
+    [marks].[class_id] AS [class_id], 
+    [marks].[out_of] AS [out_of], 
+    [marks].[sub1] AS [sub1], 
+    [marks].[sub2] AS [sub2], 
+    [marks].[sub3] AS [sub3], 
+    [marks].[sub4] AS [sub4], 
+    [marks].[sub5] AS [sub5], 
+    [marks].[res] AS [res]
+    FROM [dbo].[marks] AS [marks]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="salary" EntityType="Self.salary" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [salary].[emp_id] AS [emp_id], 
+    [salary].[amount] AS [amount], 
+    [salary].[is_paid] AS [is_paid]
+    FROM [dbo].[salary] AS [salary]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="admin1foreign" Association="Self.admin1foreign">
+      <End Role="login" EntitySet="login" />
+      <End Role="admin" EntitySet="admin" />
+    </AssociationSet>
+    <AssociationSet Name="class2foreign" Association="Self.class2foreign">
+      <End Role="class" EntitySet="class" />
+      <End Role="marks" EntitySet="marks" />
+    </AssociationSet>
+    <AssociationSet Name="class3foreign" Association="Self.class3foreign">
+      <End Role="class" EntitySet="class" />
+      <End Role="fee" EntitySet="fee" />
+    </AssociationSet>
+    <AssociationSet Name="classforeign" Association="Self.classforeign">
+      <End Role="class" EntitySet="class" />
+      <End Role="time_table" EntitySet="time_table" />
+    </AssociationSet>
+    <AssociationSet Name="emp2foreign" Association="Self.emp2foreign">
+      <End Role="employee" EntitySet="employee" />
+      <End Role="fac_attendence" EntitySet="fac_attendence" />
+    </AssociationSet>
+    <AssociationSet Name="empforeign" Association="Self.empforeign">
+      <End Role="login" EntitySet="login" />
+      <End Role="employee" EntitySet="employee" />
+    </AssociationSet>
+    <AssociationSet Name="fac3foreign" Association="Self.fac3foreign">
+      <End Role="employee" EntitySet="employee" />
+      <End Role="salary" EntitySet="salary" />
+    </AssociationSet>
+    <AssociationSet Name="periodforeign" Association="Self.periodforeign">
+      <End Role="period" EntitySet="period" />
+      <End Role="time_table" EntitySet="time_table" />
+    </AssociationSet>
+    <AssociationSet Name="school1foreign" Association="Self.school1foreign">
+      <End Role="school" EntitySet="school" />
+      <End Role="class" EntitySet="class" />
+    </AssociationSet>
+    <AssociationSet Name="schoolforeign" Association="Self.schoolforeign">
+      <End Role="school" EntitySet="school" />
+      <End Role="employee" EntitySet="employee" />
+    </AssociationSet>
+    <AssociationSet Name="stu1foreign" Association="Self.stu1foreign">
+      <End Role="student" EntitySet="student" />
+      <End Role="stu_attendance" EntitySet="stu_attendance" />
+    </AssociationSet>
+    <AssociationSet Name="stu2foreign" Association="Self.stu2foreign">
+      <End Role="student" EntitySet="student" />
+      <End Role="marks" EntitySet="marks" />
+    </AssociationSet>
+    <AssociationSet Name="stu3foreign" Association="Self.stu3foreign">
+      <End Role="student" EntitySet="student" />
+      <End Role="fee" EntitySet="fee" />
+    </AssociationSet>
+    <AssociationSet Name="stuforeign" Association="Self.stuforeign">
+      <End Role="login" EntitySet="login" />
+      <End Role="student" EntitySet="student" />
+    </AssociationSet>
+    <AssociationSet Name="sub1foreign" Association="Self.sub1foreign">
+      <End Role="subject" EntitySet="subject" />
+      <End Role="time_table" EntitySet="time_table" />
+    </AssociationSet>
+    <AssociationSet Name="subforeign" Association="Self.subforeign">
+      <End Role="subject" EntitySet="subject" />
+      <End Role="class" EntitySet="class" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="17214480559742e09865871bacdb645b" Name="Diagram1">
+        <EntityTypeShape EntityType="schooldbModel.admin" Width="1.5" PointX="3" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="schooldbModel.attelo" Width="1.5" PointX="8.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="schooldbModel.employee" Width="1.5" PointX="6" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="schooldbModel.fac_attendence" Width="1.5" PointX="8.25" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="schooldbModel.fee" Width="1.5" PointX="5.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="schooldbModel.login" Width="1.5" PointX="0.75" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="schooldbModel.mark" Width="1.5" PointX="8.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="schooldbModel.myclass" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="schooldbModel.period" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="schooldbModel.ragistration" Width="1.5" PointX="10.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="schooldbModel.salary" Width="1.5" PointX="8.25" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="schooldbModel.school" Width="1.5" PointX="1.5" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="schooldbModel.status" Width="1.5" PointX="10.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="schooldbModel.stu_attendance" Width="1.5" PointX="5.25" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="schooldbModel.student" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="schooldbModel.subject" Width="1.5" PointX="3.75" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="schooldbModel.time_table" Width="1.5" PointX="6" PointY="2.125" IsExpanded="true" />
+        <AssociationConnector Association="schooldbModel.admin1foreign" ManuallyRouted="false" />
+        <AssociationConnector Association="schooldbModel.emp2foreign" ManuallyRouted="false" />
+        <AssociationConnector Association="schooldbModel.empforeign" ManuallyRouted="false" />
+        <AssociationConnector Association="schooldbModel.fac3foreign" ManuallyRouted="false" />
+        <AssociationConnector Association="schooldbModel.schoolforeign" ManuallyRouted="false" />
+        <AssociationConnector Association="schooldbModel.class3foreign" ManuallyRouted="false" />
+        <AssociationConnector Association="schooldbModel.stu3foreign" ManuallyRouted="false" />
+        <AssociationConnector Association="schooldbModel.stuforeign" ManuallyRouted="false" />
+        <AssociationConnector Association="schooldbModel.class5foreign" ManuallyRouted="false" />
+        <AssociationConnector Association="schooldbModel.stu4foreign" ManuallyRouted="false" />
+        <AssociationConnector Association="schooldbModel.class4foreign" ManuallyRouted="false" />
+        <AssociationConnector Association="schooldbModel.classforeign" ManuallyRouted="false" />
+        <AssociationConnector Association="schooldbModel.school7foreign" ManuallyRouted="false" />
+        <AssociationConnector Association="schooldbModel.periodforeign" ManuallyRouted="false" />
+        <AssociationConnector Association="schooldbModel.stu1foreign" ManuallyRouted="false" />
+        <AssociationConnector Association="schooldbModel.sub1foreign" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

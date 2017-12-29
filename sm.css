@@ -1,0 +1,24 @@
+﻿body {
+    font-family: "Segoe UI", Times, serif;
+	padding-bottom: 40px;
+    background-color: lightgray;
+    text-align: center;
+}
+
+#pagename {
+    background-color: whitesmoke;
+    font-family: Times, serif;
+    font-size: 20px;
+}
+
+#header {
+    font-family: "Segoe UI", Times, serif;
+    font-size: 23px;
+}
+
+.gview{
+    margin: 5px;
+    text-align: center;
+    font-family: "Segoe UI", Times, serif;
+    font-size: 20px;
+}
